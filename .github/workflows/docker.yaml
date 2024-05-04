@@ -3,7 +3,13 @@ name: Docker Image CI - Publish Private
 on:
   push:
     branches: [ main, master ]
-    
+    paths-ignore:
+        - 'README.md'
+        - 'LICENSE'
+        - 'CONTRIBUTING.md'
+        - 'CODE_OF_CONDUCT.md'
+        - '.github/**'
+        - 'manifests/**'
   workflow_dispatch:
     
 
