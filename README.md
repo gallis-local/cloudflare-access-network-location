@@ -28,3 +28,7 @@ Envrionment Variables Example File - `.env.example`
 Schedule a CRON Job to run via docker run on single host
 
 For Kubernetes, schedule pod as a CRON Job 
+
+## Reference Documentation
+
+https://developers.cloudflare.com/api/operations/zero-trust-gateway-locations-list-zero-trust-gateway-locations
