@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- cronjob.yaml
+
+images:
+- name: cloudflare-access-network-location
+  newName: <repo>/cloudflare-access-network-location
+  newTag: latest
+
+secretGenerator:
+  - name: cloudflare-access-network-location
+    literals:
+      - ACCOUNT_ID=<YOUR-ACCOUNT-ID>
+      - API_KEY=<YOUR-AUTH-KEY>
+      - EMAIL=<YOUR-EMAIL>
+      - NETWORK_NAME=<NETWORK-NAME>
+      - LOG_LEVEL=INFO

@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
             - name: cloudflare-access-network-location
-              image: <repository-here>/cloudflare-access-network-location
+              image: cloudflare-access-network-location
               envFrom:
                 - secretRef:
                     name: cloudflare-access-network-location
