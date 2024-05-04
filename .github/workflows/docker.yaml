@@ -3,6 +3,7 @@ name: Docker Image CI - Publish Private
 on:
   push:
     branches: [ main, master ]
+    
   workflow_dispatch:
     
 

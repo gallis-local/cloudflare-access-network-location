@@ -1,7 +1,7 @@
 version: '3'
 services:
   cloudflare-access-network-location:
-    image: cloudflare-access-network-location
+    image: ghcr.io/gallis-local/cloudflare-access-network-location
     build:
       context: .
       dockerfile: Dockerfile

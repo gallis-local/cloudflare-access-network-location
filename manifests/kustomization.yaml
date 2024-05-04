@@ -6,8 +6,8 @@ resources:
 
 images:
 - name: cloudflare-access-network-location
-  newName: <repo>/cloudflare-access-network-location
-  newTag: latest
+  newName: ghcr.io/gallis-local/cloudflare-access-network-location
+  newTag: main
 
 secretGenerator:
   - name: cloudflare-access-network-location
