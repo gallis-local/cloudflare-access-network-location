@@ -12,6 +12,11 @@ ACCOUNT_ID = os.environ.get('ACCOUNT_ID', '')
 NETWORK_NAME = os.environ.get('NETWORK_NAME', '')
 LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 
+# Check for required environment variables
+if not EMAIL or not API_KEY or not ACCOUNT_ID or not NETWORK_NAME:
+    logging.error("Error: Missing required environment variables")
+    exit(1)
+
 # Logging configuration
 log = logging.getLogger()
 log.setLevel(LOG_LEVEL)
@@ -37,7 +42,7 @@ def check_for_success(data):
     if data['success'] == True:
         return True
     else:
-        logging.error("Error: " + data['errors'][0]['message'] + " Code: " + data['errors'][0]['code'])
+        logging.error("Error: " + data['errors'][0]['message'] + " Code: " +  str(data['errors'][0]['code']))
         return False
 
 # List all network locations
