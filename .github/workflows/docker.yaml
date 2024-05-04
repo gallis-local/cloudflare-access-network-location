@@ -1,4 +1,4 @@
-name: Docker Image CI - Sync
+name: Docker Image CI - Publish Private
 
 on:
   push:

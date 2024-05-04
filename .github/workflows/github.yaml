@@ -1,5 +1,5 @@
 #
-name: Create and publish a Docker image to GitHub Packages
+name: Docker Image CI - Publish Github Container Registry
 
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
@@ -14,7 +14,7 @@ env:
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
   build-and-push-image:
-    runs-on: x64, self-hosted
+    runs-on: self-hosted,x64
     # Sets the permissions granted to the `GITHUB_TOKEN` for the actions in this job.
     permissions:
       contents: read
