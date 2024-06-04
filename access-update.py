@@ -66,16 +66,20 @@ def list_newtwork_locations():
 
     # Get the location ID for the network that matches the NETWORK_NAME
     for location in data['result']:
-        if location['name'] == NETWORK_NAME:
-            logging.info("Network location found: " + NETWORK_NAME)
-            logging.debug("Location Name: " + location['name'])
-            logging.debug("Location ID: " + location['id'])
-            logging.debug("Location Updated: " + location['updated_at'])
-            for network in location['networks']:
-                logging.debug("Network ID: " + network['id'])
-                logging.debug("Network IP: " + network['network'])
-            return location['id']
-    
+        try:
+            if location['name'] == NETWORK_NAME:
+                logging.info("Network location found: " + NETWORK_NAME)
+                logging.debug("Location Name: " + location['name'])
+                logging.debug("Location ID: " + location['id'])
+                logging.debug("Location Updated: " + location['updated_at'])
+                for network in location['networks']:
+                    logging.debug("Network ID: " + network['id'])
+                    logging.debug("Network IP: " + network['network'])
+                return location['id']
+        except Exception as e:
+            logging.error("Error: " + str(e))
+            exit(1)
+            
     logging.error("Error: Network location not found: " + NETWORK_NAME)
     exit(1)
 
