@@ -43,7 +43,7 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ${{ secrets.DOCKER_REPOSITORY }}/east/${{ vars.IMAGE_NAME }}:latest
+        tags: ${{ secrets.DOCKER_REPOSITORY }}/${{ secrets.DOCKER_LIBRARY }}/${{ vars.IMAGE_NAME }}:latest
         
     - uses: 8398a7/action-slack@v3
       name: Slack Notification
